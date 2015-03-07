@@ -3,8 +3,14 @@ require './entry.rb'
 class EntryService
 
   def save_entry (date, items)
-    entry = Entry.new(:date_created => date, :things => items )    
+    entry = create_entry(date, items)
     entry.save!
+  end
+
+  private
+
+  def create_entry (date, items)
+    Entry.new(:date_created => date, :things => items )
   end
 
 end
