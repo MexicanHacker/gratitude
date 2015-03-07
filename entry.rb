@@ -1,3 +1,4 @@
+require 'mongo_mapper'
 class Entry
   include MongoMapper::Document
 
