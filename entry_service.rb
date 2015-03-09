@@ -7,7 +7,13 @@ class EntryService
     entry.save!
   end
 
+  def find_entries()
+    
+  end
+
   private
+
+
 
   def create_entry (date, items)
     Entry.new(:date_created => date, :things => items )

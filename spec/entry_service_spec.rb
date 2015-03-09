@@ -11,4 +11,9 @@ describe EntryService do
     service.save_entry(Time.now, ["Hola mundo", "Todo sereno"])
   end
 
+  it "retrieves all entries" do
+    service = EntryService.new
+    entries = service.find_entries()
+  end
+
 end
