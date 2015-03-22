@@ -12,8 +12,16 @@ describe EntryService do
   end
 
   it "retrieves all entries" do
+    items = {
+     'date' => Time.now,
+     'thankful' => "Todo sereno"
+    }
+    entry = double('Entry')
     service = EntryService.new
+    expect(entry).to receive(:sort).with(:date_created).and_return(items)
+    allow(service).to receive(:get_entry).and_return(entry)
     entries = service.find_entries()
+    entries.empty?
   end
 
 end
