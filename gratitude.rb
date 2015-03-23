@@ -27,9 +27,6 @@ end
 
 get '/gratitude/list' do
   entry_service = EntryService.new
-  result = ''
-  entry_service.find_entries.each do |entry|
-    result = result + "#{entry[:date_created]}" + "<br/>"
-  end
-  result
+  @entries = entry_service.find_entries
+  erb :list
 end

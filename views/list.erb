@@ -1,0 +1,7 @@
+<% @entries.each do |entry| %>
+  <%= entry[:date_created] %> -
+  <% entry[:things].each do |thing| %>
+    <%= thing %> |
+  <% end %>
+  <br/>
+<% end %>
